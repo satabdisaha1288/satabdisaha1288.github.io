@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Satabdi Saha</title>
 
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -23,7 +26,7 @@
     }
 
     .left-column {
-      width: 220px;
+      width: 230px;
       flex-shrink: 0;
       text-align: center;
     }
@@ -34,6 +37,63 @@
       object-fit: cover;
       border-radius: 50%;
       margin-top: 5px;
+      margin-bottom: 16px;
+    }
+
+    .profile-name {
+      font-size: 1.35em;
+      font-weight: bold;
+      margin: 0 0 4px;
+      line-height: 1.25;
+    }
+
+    .profile-title {
+      color: #666;
+      font-size: 0.95em;
+      margin: 0 0 14px;
+      line-height: 1.4;
+    }
+
+    .icon-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .icon-links a {
+      text-decoration: none;
+      color: #2f63ff;
+      font-size: 1.35em;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .icon-links a:hover {
+      color: #4b0082;
+      transform: translateY(-2px);
+    }
+
+    .scholar-icon,
+    .orcid-icon {
+      font-size: 0.75em;
+      font-weight: bold;
+      border: 2px solid #2f63ff;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      color: #2f63ff;
+    }
+
+    .icon-links a:hover .scholar-icon,
+    .icon-links a:hover .orcid-icon {
+      border-color: #4b0082;
+      color: #4b0082;
     }
 
     .right-column {
@@ -115,6 +175,48 @@
 
     <div class="left-column">
       <img src="profile.jpg" alt="Photo of Satabdi Saha" class="profile-photo">
+
+      <p class="profile-name">Satabdi Saha</p>
+      <p class="profile-title">
+        Postdoctoral Fellow<br>
+        UT MD Anderson Cancer Center
+      </p>
+
+      <div class="icon-links" aria-label="Selected links">
+        <a href="https://scholar.google.com/citations?user=vw9yJBEAAAAJ&hl=en"
+           target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+          <span class="scholar-icon">G</span>
+        </a>
+
+        <a href="https://github.com/satabdisaha1288"
+           target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="https://orcid.org/0000-0002-0117-9431"
+           target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+          <span class="orcid-icon">iD</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/satabdi-saha-886aaa29/"
+           target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <!-- Uncomment and replace EMAIL_ADDRESS if you want an email icon -->
+        <!--
+        <a href="mailto:EMAIL_ADDRESS" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        -->
+
+        <!-- Uncomment and replace CV_LINK if you want a CV icon -->
+        <!--
+        <a href="CV_LINK" target="_blank" rel="noopener noreferrer" aria-label="CV">
+          <i class="fa-solid fa-file-lines"></i>
+        </a>
+        -->
+      </div>
     </div>
 
     <div class="right-column">
@@ -130,7 +232,6 @@
           <a href="index.html">Home</a>
           <a href="research.html">Research</a>
           <a href="publications.html">Publications</a>
-          <a href="software.html">Software</a>
           <!-- <a href="cv.html">CV</a> -->
           <a href="contact.html">Contact</a>
         </nav>
@@ -184,35 +285,6 @@
           <li>Graphical models and structured shrinkage</li>
           <li>Biomedical and cancer applications</li>
         </ul>
-      </section>
-
-      <section>
-        <h2>Selected Links</h2>
-
-        <p>
-          <a href="https://scholar.google.com/citations?user=vw9yJBEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-            Google Scholar
-          </a>
-          |
-          <a href="https://github.com/satabdisaha1288" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          |
-          <a href="https://orcid.org/0000-0002-0117-9431" target="_blank" rel="noopener noreferrer">
-            ORCID
-          </a>
-          |
-          <a href="https://www.linkedin.com/in/satabdi-saha-886aaa29/" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-
-          <!--
-          |
-          <a href="CV_LINK" target="_blank" rel="noopener noreferrer">
-            CV
-          </a>
-          -->
-        </p>
       </section>
 
     </div>
