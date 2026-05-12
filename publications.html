@@ -9,16 +9,17 @@
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 950px;
+      max-width: 980px;
       margin: 40px auto;
       padding: 0 24px;
-      line-height: 1.6;
+      line-height: 1.55;
       color: #222;
+      background: #fff;
     }
 
     header {
       border-bottom: 1px solid #ddd;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
       padding-bottom: 20px;
     }
 
@@ -28,7 +29,7 @@
     }
 
     h2 {
-      margin-top: 42px;
+      margin-top: 40px;
       border-bottom: 1px solid #eee;
       padding-bottom: 6px;
       color: #222;
@@ -58,37 +59,110 @@
     .note {
       color: #555;
       font-size: 0.95em;
-      margin-bottom: 25px;
+      margin-bottom: 18px;
+    }
+
+    .legend {
+      color: #555;
+      font-size: 0.93em;
+      margin: 8px 0 22px;
+    }
+
+    .publication-search {
+      margin: 22px 0 10px;
+    }
+
+    .publication-search input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 12px 0 24px;
+    }
+
+    .filter-buttons button {
+      border: 1px solid #ccc;
+      background: #f7f7f7;
+      padding: 7px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.92em;
+    }
+
+    .filter-buttons button.active {
+      background: #4b0082;
+      color: #fff;
+      border-color: #4b0082;
     }
 
     .publication {
-      margin-bottom: 26px;
+      margin-bottom: 17px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .publication p {
+      margin: 0;
     }
 
     .publication-title {
       font-weight: bold;
-      font-size: 1.04em;
     }
 
     .publication-authors {
       color: #333;
-      margin-top: 3px;
     }
 
     .publication-venue {
       color: #555;
       font-style: italic;
-      margin-top: 3px;
-    }
-
-    .joint-note {
-      color: #555;
-      font-size: 0.93em;
-      margin-top: 2px;
     }
 
     .selected-name {
       font-weight: bold;
+    }
+
+    .pub-links {
+      display: inline-block;
+      margin-left: 6px;
+      white-space: nowrap;
+    }
+
+    .pub-links a {
+      font-size: 0.88em;
+      text-decoration: none;
+      margin-left: 5px;
+      padding: 2px 7px;
+      border: 1px solid #d8c8e8;
+      border-radius: 999px;
+      color: #4b0082;
+      background: #faf7fd;
+    }
+
+    .pub-links a:hover {
+      background: #f0e7f7;
+    }
+
+    .pub-links .disabled {
+      color: #777;
+      border-color: #ddd;
+      background: #f7f7f7;
+      pointer-events: none;
+    }
+
+    .no-results {
+      display: none;
+      color: #777;
+      font-style: italic;
+      margin-top: 20px;
     }
 
     @media (max-width: 700px) {
@@ -100,6 +174,17 @@
       nav a {
         display: inline-block;
         margin-bottom: 8px;
+      }
+
+      .pub-links {
+        display: block;
+        margin-left: 0;
+        margin-top: 5px;
+      }
+
+      .pub-links a {
+        margin-left: 0;
+        margin-right: 6px;
       }
     }
   </style>
@@ -131,187 +216,214 @@
         Google Scholar profile
       </a>.
     </p>
+
+    <p class="legend">
+      <sup>†</sup> Equal contribution / joint first authorship.
+    </p>
+
+    <div class="publication-search">
+      <input
+        type="text"
+        id="publicationSearch"
+        placeholder="Search publications by title, author, journal, year, or keyword..."
+        aria-label="Search publications">
+    </div>
+
+    <div class="filter-buttons" aria-label="Publication filters">
+      <button class="active" type="button" data-filter="all">All</button>
+      <button type="button" data-filter="methodology">Methodology</button>
+      <button type="button" data-filter="applications">Applications</button>
+    </div>
   </section>
 
-  <section>
+  <section class="publication-section" data-section="methodology">
     <h2>Methodology</h2>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://arxiv.org/abs/2406.01557" target="_blank" rel="noopener noreferrer">
-          Bayesian compositional regression with flexible microbiome feature aggregation and selection
-        </a>
-      </div>
-      <div class="publication-authors">
-        <span class="selected-name">Satabdi Saha</span>, et al.
-      </div>
-      <div class="publication-venue">
-        arXiv preprint, 2024
-      </div>
+    <div class="publication" data-category="methodology">
+      <p>
+        <span class="publication-title">Bayesian compositional regression with flexible microbiome feature aggregation and selection.</span>
+        <span class="publication-authors"><span class="selected-name">Satabdi Saha</span>, Liangliang Zhang, Kim-Anh Do, Christine B. Peterson.</span>
+        <span class="publication-venue">arXiv preprint, 2024.</span>
+        <span class="pub-links">
+          <a href="https://arxiv.org/abs/2406.01557" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="disabled" href="#" aria-disabled="true">Code</a>
+        </span>
+      </p>
     </div>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.9953" target="_blank" rel="noopener noreferrer">
-          An integrated Bayesian framework for multi-omics prediction and classification
-        </a>
-      </div>
-      <div class="publication-authors">
-        Himel Mallick, Anupreet Porwal, <span class="selected-name">Satabdi Saha</span>, et al.
-      </div>
-      <div class="publication-venue">
-        Statistics in Medicine, 2024
-      </div>
+    <div class="publication" data-category="methodology">
+      <p>
+        <span class="publication-title">An integrated Bayesian framework for multi-omics prediction and classification.</span>
+        <span class="publication-authors">Himel Mallick, Anupreet Porwal, <span class="selected-name">Satabdi Saha</span>, Piyali Basak, Vladimir Svetnik, Erina Paul.</span>
+        <span class="publication-venue">Statistics in Medicine, 2024.</span>
+        <span class="pub-links">
+          <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.9953" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a href="https://github.com/himelmallick/IntegratedLearner" target="_blank" rel="noopener noreferrer">Code</a>
+        </span>
+      </p>
     </div>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-statistics-040522-120734" target="_blank" rel="noopener noreferrer">
-          Analysis of microbiome data
-        </a>
-      </div>
-      <div class="publication-authors">
-        Christine B. Peterson, <span class="selected-name">Satabdi Saha</span>, et al.
-      </div>
-      <div class="publication-venue">
-        Annual Review of Statistics and Its Application, 2024
-      </div>
+    <div class="publication" data-category="methodology">
+      <p>
+        <span class="publication-title">Analysis of microbiome data.</span>
+        <span class="publication-authors">Christine B. Peterson, <span class="selected-name">Satabdi Saha</span>, Kim-Anh Do.</span>
+        <span class="publication-venue">Annual Review of Statistics and Its Application, 2024.</span>
+        <span class="pub-links">
+          <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-statistics-040522-120734" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="disabled" href="#" aria-disabled="true">Code</a>
+        </span>
+      </p>
     </div>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://link.springer.com/article/10.1007/s44199-025-00154-7" target="_blank" rel="noopener noreferrer">
-          Mathematical foundations of beta diversity: Why common metrics fail in microbiome analysis
-        </a>
-      </div>
-      <div class="publication-authors">
-        Zihan Zhu, Yiqian Zhang, Wenhao Li, Michael Greenacre, <span class="selected-name">Satabdi Saha</span>, et al.
-      </div>
-      <div class="publication-venue">
-        Journal of Statistical Theory and Applications, 2026
-      </div>
+    <div class="publication" data-category="methodology">
+      <p>
+        <span class="publication-title">Mathematical foundations of beta diversity: Why common metrics fail in microbiome analysis.</span>
+        <span class="publication-authors">Zihan Zhu, Yiqian Zhang, Wenhao Li, Michael Greenacre, <span class="selected-name">Satabdi Saha</span>, Yushu Shi, Liangliang Zhang.</span>
+        <span class="publication-venue">Journal of Statistical Theory and Applications, 2026.</span>
+        <span class="pub-links">
+          <a href="https://link.springer.com/article/10.1007/s44199-025-00154-7" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="disabled" href="#" aria-disabled="true">Code</a>
+        </span>
+      </p>
     </div>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://academic.oup.com/bioinformatics/article/38/11/3011/6572335" target="_blank" rel="noopener noreferrer">
-          scSGL: Kernelized signed graph learning for single-cell gene regulatory network inference
-        </a>
-      </div>
-      <div class="publication-authors">
-        Abdullah Karaaslanli<sup>*</sup> and <span class="selected-name">Satabdi Saha</span><sup>*</sup>, et al.
-      </div>
-      <div class="publication-venue">
-        Bioinformatics, 2022
-      </div>
-      <div class="joint-note">
-        <sup>*</sup>Joint first authors
-      </div>
+    <div class="publication" data-category="methodology">
+      <p>
+        <span class="publication-title">scSGL: Kernelized signed graph learning for single-cell gene regulatory network inference.</span>
+        <span class="publication-authors">Abdullah Karaaslanli<sup>†</sup>, <span class="selected-name">Satabdi Saha</span><sup>†</sup>, Selin Aviyente, Tapabrata Maiti.</span>
+        <span class="publication-venue">Bioinformatics, 2022.</span>
+        <span class="pub-links">
+          <a href="https://academic.oup.com/bioinformatics/article/38/11/3011/6572335" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a href="https://github.com/Single-Cell-Graph-Learning/scSGL" target="_blank" rel="noopener noreferrer">Code</a>
+        </span>
+      </p>
     </div>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10071725/" target="_blank" rel="noopener noreferrer">
-          Kernelized multiview signed graph learning for single-cell RNA sequencing data
-        </a>
-      </div>
-      <div class="publication-authors">
-        Abdullah Karaaslanli<sup>*</sup> and <span class="selected-name">Satabdi Saha</span><sup>*</sup>, et al.
-      </div>
-      <div class="publication-venue">
-        BMC Bioinformatics, 2023
-      </div>
-      <div class="joint-note">
-        <sup>*</sup>Equal contribution
-      </div>
+    <div class="publication" data-category="methodology">
+      <p>
+        <span class="publication-title">Kernelized multiview signed graph learning for single-cell RNA sequencing data.</span>
+        <span class="publication-authors">Abdullah Karaaslanli<sup>†</sup>, <span class="selected-name">Satabdi Saha</span><sup>†</sup>, Tapabrata Maiti, Selin Aviyente.</span>
+        <span class="publication-venue">BMC Bioinformatics, 2023.</span>
+        <span class="pub-links">
+          <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10071725/" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="disabled" href="#" aria-disabled="true">Code</a>
+        </span>
+      </p>
     </div>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://academic.oup.com/nar/article-abstract/50/8/e48/6513570" target="_blank" rel="noopener noreferrer">
-          Benchmarking of a Bayesian single-cell RNA-seq differential gene expression test for dose-response study designs
-        </a>
-      </div>
-      <div class="publication-authors">
-        Rance Nault<sup>*</sup> and <span class="selected-name">Satabdi Saha</span><sup>*</sup>, et al.
-      </div>
-      <div class="publication-venue">
-        Nucleic Acids Research, 2022
-      </div>
-      <div class="joint-note">
-        <sup>*</sup>Joint first authors
-      </div>
+    <div class="publication" data-category="methodology">
+      <p>
+        <span class="publication-title">Benchmarking of a Bayesian single-cell RNA-seq differential gene expression test for dose-response study designs.</span>
+        <span class="publication-authors">Rance Nault<sup>†</sup>, <span class="selected-name">Satabdi Saha</span><sup>†</sup>, Sudin Bhattacharya, Jack Dodson, Samiran Sinha, Tapabrata Maiti, Tim Zacharewski.</span>
+        <span class="publication-venue">Nucleic Acids Research, 2022.</span>
+        <span class="pub-links">
+          <a href="https://academic.oup.com/nar/article-abstract/50/8/e48/6513570" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="disabled" href="#" aria-disabled="true">Code</a>
+        </span>
+      </p>
     </div>
-
   </section>
 
-  <section>
+  <section class="publication-section" data-section="applications">
     <h2>Applications</h2>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://ashpublications.org/bloodadvances/article/9/14/3429/536607/Longitudinal-analysis-of-gut-microbiome-and" target="_blank" rel="noopener noreferrer">
-          Longitudinal analysis of gut microbiome and metabolome correlates of response and toxicity with idecabtagene vicleucel
-        </a>
-      </div>
-      <div class="publication-authors">
-        <span class="selected-name">Satabdi Saha</span><sup>*</sup> and Lubna Rehman<sup>*</sup>, et al.
-      </div>
-      <div class="publication-venue">
-        Blood Advances, 2025
-      </div>
-      <div class="joint-note">
-        <sup>*</sup>Equal contribution
-      </div>
+    <div class="publication" data-category="applications">
+      <p>
+        <span class="publication-title">Longitudinal analysis of gut microbiome and metabolome correlates of response and toxicity with idecabtagene vicleucel.</span>
+        <span class="publication-authors"><span class="selected-name">Satabdi Saha</span><sup>†</sup>, Lubna Rehman<sup>†</sup>, Abdur Rehman, and collaborators.</span>
+        <span class="publication-venue">Blood Advances, 2025.</span>
+        <span class="pub-links">
+          <a href="https://ashpublications.org/bloodadvances/article/9/14/3429/536607/Longitudinal-analysis-of-gut-microbiome-and" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="disabled" href="#" aria-disabled="true">Code</a>
+        </span>
+      </p>
     </div>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://pubmed.ncbi.nlm.nih.gov/41515159/" target="_blank" rel="noopener noreferrer">
-          Investigating chronic toxicity, diet, patient-reported outcomes, and the microbiome in immunotherapy-treated metastatic melanoma survivors
-        </a>
-      </div>
-      <div class="publication-authors">
-        Margaux Robert, <span class="selected-name">Satabdi Saha</span>, et al.
-      </div>
-      <div class="publication-venue">
-        Nutrients, 2026
-      </div>
+    <div class="publication" data-category="applications">
+      <p>
+        <span class="publication-title">Investigating chronic toxicity, diet, patient-reported outcomes, and the microbiome in immunotherapy-treated metastatic melanoma survivors: A new frontier.</span>
+        <span class="publication-authors">Margaux Robert, <span class="selected-name">Satabdi Saha</span>, Nazli Dizman, Michelle Rohlfs, Elizabeth Sirmans, Julie Simon, Rodabe N. Amaria, Isabella C. Glitza Oliva, Hussein A. Tawbi, Michael A. Davies, Ayako Ikeguchi, Karen Basen-Engquist, Karen Schadler, Mary E. Roth, Wen Song, Xiaotao Zhang, Nadim J. Ajami, Lorenzo Cohen, Jennifer A. Wargo, Christine B. Peterson, Jennifer L. McQuade, Carrie R. Daniel.</span>
+        <span class="publication-venue">Nutrients, 2026.</span>
+        <span class="pub-links">
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41515159/" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="disabled" href="#" aria-disabled="true">Code</a>
+        </span>
+      </p>
     </div>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://ashpublications.org/blood/article/142/21/1784/497479/Sustained-remissions-in-CLL-after-frontline-FCR" target="_blank" rel="noopener noreferrer">
-          Sustained remissions in CLL after frontline FCR treatment with very-long-term follow-up
-        </a>
-      </div>
-      <div class="publication-authors">
-        Philip A. Thompson, Alexandre Bazinet, William G. Wierda, Constantine S. Tam, Susan M. O'Brien, <span class="selected-name">Satabdi Saha</span>, et al.
-      </div>
-      <div class="publication-venue">
-        Blood, 2023
-      </div>
+    <div class="publication" data-category="applications">
+      <p>
+        <span class="publication-title">Sustained remissions in CLL after frontline FCR treatment with very-long-term follow-up.</span>
+        <span class="publication-authors">Philip A. Thompson, Alexandre Bazinet, William G. Wierda, Constantine S. Tam, Susan M. O'Brien, <span class="selected-name">Satabdi Saha</span>, and collaborators.</span>
+        <span class="publication-venue">Blood, 2023.</span>
+        <span class="pub-links">
+          <a href="https://ashpublications.org/blood/article/142/21/1784/497479/Sustained-remissions-in-CLL-after-frontline-FCR" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="disabled" href="#" aria-disabled="true">Code</a>
+        </span>
+      </p>
     </div>
 
-    <div class="publication">
-      <div class="publication-title">
-        <a href="https://academic.oup.com/toxsci/article-abstract/191/1/135/6759386" target="_blank" rel="noopener noreferrer">
-          Single-cell transcriptomics shows dose-dependent disruption of hepatic zonation by TCDD in mice
-        </a>
-      </div>
-      <div class="publication-authors">
-        Rance Nault, <span class="selected-name">Satabdi Saha</span>, et al.
-      </div>
-      <div class="publication-venue">
-        Toxicological Sciences, 2023
-      </div>
+    <div class="publication" data-category="applications">
+      <p>
+        <span class="publication-title">Single-cell transcriptomics shows dose-dependent disruption of hepatic zonation by TCDD in mice.</span>
+        <span class="publication-authors">Rance Nault, <span class="selected-name">Satabdi Saha</span>, Sudin Bhattacharya, Samiran Sinha, Tapabrata Maiti, Tim Zacharewski.</span>
+        <span class="publication-venue">Toxicological Sciences, 2023.</span>
+        <span class="pub-links">
+          <a href="https://academic.oup.com/toxsci/article-abstract/191/1/135/6759386" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a class="disabled" href="#" aria-disabled="true">Code</a>
+        </span>
+      </p>
     </div>
-
-    
-
-    
-
   </section>
+
+  <p id="noResults" class="no-results">No publications match your search.</p>
+
+  <script>
+    const searchInput = document.getElementById("publicationSearch");
+    const filterButtons = document.querySelectorAll(".filter-buttons button");
+    const publications = document.querySelectorAll(".publication");
+    const sections = document.querySelectorAll(".publication-section");
+    const noResults = document.getElementById("noResults");
+
+    let activeFilter = "all";
+
+    function filterPublications() {
+      const query = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      publications.forEach(pub => {
+        const text = pub.textContent.toLowerCase();
+        const category = pub.dataset.category;
+        const matchesSearch = text.includes(query);
+        const matchesFilter = activeFilter === "all" || category === activeFilter;
+
+        if (matchesSearch && matchesFilter) {
+          pub.style.display = "";
+          visibleCount++;
+        } else {
+          pub.style.display = "none";
+        }
+      });
+
+      sections.forEach(section => {
+        const visiblePubs = section.querySelectorAll(".publication:not([style*='display: none'])");
+        section.style.display = visiblePubs.length > 0 ? "" : "none";
+      });
+
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    searchInput.addEventListener("input", filterPublications);
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
+        filterPublications();
+      });
+    });
+  </script>
 
 </body>
 
