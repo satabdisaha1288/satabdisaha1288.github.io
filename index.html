@@ -1,140 +1,224 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Satabdi Saha</title>
+
   <style>
-    .profile-photo {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
     body {
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 0 30px;
       line-height: 1.6;
       color: #222;
     }
+
+    .page-layout {
+      display: flex;
+      align-items: flex-start;
+      gap: 45px;
+    }
+
+    .left-column {
+      width: 220px;
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 5px;
+    }
+
+    .right-column {
+      flex: 1;
+    }
+
     header {
       border-bottom: 1px solid #ddd;
       margin-bottom: 30px;
       padding-bottom: 20px;
     }
+
     h1 {
+      margin-top: 0;
       margin-bottom: 5px;
+      font-size: 2.4em;
     }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.7em;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 1.05em;
+      margin-top: 0;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
     nav a {
       margin-right: 18px;
       text-decoration: none;
       color: #0066cc;
       font-weight: bold;
     }
-    nav {
-      margin-top: 15px;
-    }
+
     section {
       margin-bottom: 35px;
     }
-    .subtitle {
-      color: #555;
-      font-size: 1.05em;
+
+    a {
+      color: #4b0082;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    @media (max-width: 800px) {
+      .page-layout {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .left-column {
+        width: 100%;
+        text-align: center;
+      }
+
+      .right-column {
+        width: 100%;
+      }
+
+      nav a {
+        display: inline-block;
+        margin-bottom: 8px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <img src="profile.jpg" alt="Photo of Satabdi Saha" class="profile-photo">
-    <h1>Satabdi Saha</h1>
-    <p class="subtitle">Postdoctoral Fellow, Department of Biostatistics, UT MD Anderson Cancer Center</p>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="software.html">Software</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="page-layout">
 
-  <section>
-    <h2>About</h2>
-    <p>
-      <p>
-  I am currently a Postdoctoral Fellow in the 
-  <a href="https://www.mdanderson.org/research/departments-labs-institutes/departments-divisions/biostatistics.html" target="_blank" rel="noopener noreferrer">
-    Department of Biostatistics
-  </a>
-  at 
-  <a href="https://www.mdanderson.org" target="_blank" rel="noopener noreferrer">
-    The University of Texas MD Anderson Cancer Center (UTMDACC)
-  </a>, advised by 
-  <a href="https://profiles.rice.edu/faculty/christine-peterson" target="_blank" rel="noopener noreferrer">
-    Dr. Christine Peterson
-  </a>. My research focuses on developing Bayesian statistical methods for high-dimensional and compositional data, 
-        with applications in microbiome and multi-omics integration. In particular, my work emphasizes variable selection, 
-        clustering, and predictive modeling to advance principled approaches for complex biomedical data in cancer research.
-  From 2023 to 2024, I also served as an 
-  <a href="https://www.mdanderson.org/education-training/research-training/postdoctoral-training/postdoctoral-fellowships/idso-postdoctoral-fellowship.html" target="_blank" rel="noopener noreferrer">
-    Institute for Data Science in Oncology &#40;IDSO&#41; Fellow
-  </a>
-  at
-    UTMDACC
-  </a>. Prior to this, I completed my Ph.D. in Statistics at 
-  <a href="https://stt.natsci.msu.edu" target="_blank" rel="noopener noreferrer">
-    Michigan State University
-  </a>
-  under the supervision of 
-  <a href="https://directory.natsci.msu.edu/Directory/Profiles/Person/102583?org=2&group=152" target="_blank" rel="noopener noreferrer">
-    Dr. Tapabrata Maiti
-  </a>, where I developed hypothesis-testing approaches and graphical models for the analysis of single-cell datasets, with an emphasis on pharmacogenomics.
-</p>
-  </section>
+    <div class="left-column">
+      <img src="profile.jpg" alt="Photo of Satabdi Saha" class="profile-photo">
+    </div>
 
-  <section>
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Bayesian methods for microbiome and multi-omics data</li>
-      <li>Compositional data analysis</li>
-      <li>Variable selection and clustering</li>
-      <li>Graphical models and structured shrinkage</li>
-      <li>Biomedical and cancer applications</li>
-    </ul>
-  </section>
+    <div class="right-column">
 
- <section>
-  <h2>Selected Links</h2>
+      <header>
+        <h1>Satabdi Saha</h1>
 
-  <p>
-    <a href="https://scholar.google.com/citations?user=vw9yJBEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-      Google Scholar
-    </a>
-    |
-    <a href="https://github.com/satabdisaha1288" target="_blank" rel="noopener noreferrer">
-      GitHub
-    </a>
-    |
-    <a href="https://orcid.org/0000-0002-0117-9431" target="_blank" rel="noopener noreferrer">
-      ORCID
-    </a>
-    |
-    <a href="https://www.linkedin.com/in/satabdi-saha-886aaa29/" target="_blank" rel="noopener noreferrer">
-      LinkedIn
-    </a>
-   <!--
-|
-<a href="CV_LINK" target="_blank" rel="noopener noreferrer">
-  CV
-</a>
--->
-  </p>
-</section>
+        <p class="subtitle">
+          Postdoctoral Fellow, Department of Biostatistics, UT MD Anderson Cancer Center
+        </p>
+
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="software.html">Software</a>
+          <!-- <a href="cv.html">CV</a> -->
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <section>
+        <h2>About</h2>
+
+        <p>
+          I am currently a Postdoctoral Fellow in the
+          <a href="https://www.mdanderson.org/research/departments-labs-institutes/departments-divisions/biostatistics.html" target="_blank" rel="noopener noreferrer">
+            Department of Biostatistics
+          </a>
+          at
+          <a href="https://www.mdanderson.org" target="_blank" rel="noopener noreferrer">
+            The University of Texas MD Anderson Cancer Center &#40;UTMDACC&#41;
+          </a>, advised by
+          <a href="https://profiles.rice.edu/faculty/christine-peterson" target="_blank" rel="noopener noreferrer">
+            Dr. Christine Peterson
+          </a>.
+          My research focuses on developing Bayesian statistical methods for high-dimensional and compositional data,
+          with applications in microbiome and multi-omics integration. In particular, my work emphasizes variable
+          selection, clustering, and predictive modeling to advance principled approaches for complex biomedical data
+          in cancer research.
+        </p>
+
+        <p>
+          From 2023 to 2024, I also served as an
+          <a href="https://www.mdanderson.org/education-training/research-training/postdoctoral-training/postdoctoral-fellowships/idso-postdoctoral-fellowship.html" target="_blank" rel="noopener noreferrer">
+            Institute for Data Science in Oncology &#40;IDSO&#41; Fellow
+          </a>
+          at UTMDACC. Prior to this, I completed my Ph.D. in Statistics at
+          <a href="https://stt.natsci.msu.edu" target="_blank" rel="noopener noreferrer">
+            Michigan State University
+          </a>
+          under the supervision of
+          <a href="https://directory.natsci.msu.edu/Directory/Profiles/Person/102583?org=2&group=152" target="_blank" rel="noopener noreferrer">
+            Dr. Tapabrata Maiti
+          </a>, where I developed hypothesis-testing approaches and graphical models for the analysis of single-cell
+          datasets, with an emphasis on pharmacogenomics.
+        </p>
+      </section>
+
+      <section>
+        <h2>Research Interests</h2>
+
+        <ul>
+          <li>Bayesian methods for microbiome and multi-omics data</li>
+          <li>Compositional data analysis</li>
+          <li>Variable selection and clustering</li>
+          <li>Graphical models and structured shrinkage</li>
+          <li>Biomedical and cancer applications</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Selected Links</h2>
+
+        <p>
+          <a href="https://scholar.google.com/citations?user=vw9yJBEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+            Google Scholar
+          </a>
+          |
+          <a href="https://github.com/satabdisaha1288" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          |
+          <a href="https://orcid.org/0000-0002-0117-9431" target="_blank" rel="noopener noreferrer">
+            ORCID
+          </a>
+          |
+          <a href="https://www.linkedin.com/in/satabdi-saha-886aaa29/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+
+          <!--
+          |
+          <a href="CV_LINK" target="_blank" rel="noopener noreferrer">
+            CV
+          </a>
+          -->
+        </p>
+      </section>
+
+    </div>
+
+  </div>
 
 </body>
+
 </html>
