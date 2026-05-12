@@ -9,9 +9,9 @@
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      max-width: 900px;
+      max-width: 950px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 0 24px;
       line-height: 1.6;
       color: #222;
     }
@@ -24,12 +24,14 @@
 
     h1 {
       margin-bottom: 5px;
+      font-size: 2.2em;
     }
 
     h2 {
-      margin-top: 38px;
+      margin-top: 42px;
       border-bottom: 1px solid #eee;
       padding-bottom: 6px;
+      color: #222;
     }
 
     nav {
@@ -43,18 +45,29 @@
       font-weight: bold;
     }
 
+    a {
+      color: #4b0082;
+    }
+
     .subtitle {
       color: #555;
       font-size: 1.05em;
+      margin-top: 0;
+    }
+
+    .note {
+      color: #555;
+      font-size: 0.95em;
+      margin-bottom: 25px;
     }
 
     .publication {
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .publication-title {
       font-weight: bold;
-      font-size: 1.03em;
+      font-size: 1.04em;
     }
 
     .publication-authors {
@@ -68,14 +81,26 @@
       margin-top: 3px;
     }
 
-    .note {
+    .joint-note {
       color: #555;
-      font-size: 0.95em;
-      margin-bottom: 25px;
+      font-size: 0.93em;
+      margin-top: 2px;
     }
 
-    a {
-      color: #4b0082;
+    .selected-name {
+      font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        margin: 25px auto;
+        padding: 0 18px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin-bottom: 8px;
+      }
     }
   </style>
 </head>
@@ -102,7 +127,7 @@
   <section>
     <p class="note">
       A complete and updated list of publications is available on my
-      <a href="https://scholar.google.com/citations?user=vw9yJBEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+      <a href="https://scholar.google.com/citations?user=vw9yJBEAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer">
         Google Scholar profile
       </a>.
     </p>
@@ -113,12 +138,12 @@
 
     <div class="publication">
       <div class="publication-title">
-        <a href="https://arxiv.org/html/2406.01557v2" target="_blank" rel="noopener noreferrer">
+        <a href="https://arxiv.org/abs/2406.01557" target="_blank" rel="noopener noreferrer">
           Bayesian compositional regression with flexible microbiome feature aggregation and selection
         </a>
       </div>
       <div class="publication-authors">
-        Satabdi Saha, Liangliang Zhang, Kim-Anh Do, Christine B. Peterson
+        <span class="selected-name">Satabdi Saha</span>, et al.
       </div>
       <div class="publication-venue">
         arXiv preprint, 2024
@@ -127,12 +152,26 @@
 
     <div class="publication">
       <div class="publication-title">
-        <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-statistics-040522-120734" target="_blank" rel="noopener noreferrer">
-          Analysis of Microbiome Data
+        <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.9953" target="_blank" rel="noopener noreferrer">
+          An integrated Bayesian framework for multi-omics prediction and classification
         </a>
       </div>
       <div class="publication-authors">
-        Christine B. Peterson, Satabdi Saha, Kim-Anh Do
+        Himel Mallick, Anupreet Porwal, <span class="selected-name">Satabdi Saha</span>, et al.
+      </div>
+      <div class="publication-venue">
+        Statistics in Medicine, 2024
+      </div>
+    </div>
+
+    <div class="publication">
+      <div class="publication-title">
+        <a href="https://www.annualreviews.org/content/journals/10.1146/annurev-statistics-040522-120734" target="_blank" rel="noopener noreferrer">
+          Analysis of microbiome data
+        </a>
+      </div>
+      <div class="publication-authors">
+        Christine B. Peterson, <span class="selected-name">Satabdi Saha</span>, et al.
       </div>
       <div class="publication-venue">
         Annual Review of Statistics and Its Application, 2024
@@ -141,29 +180,32 @@
 
     <div class="publication">
       <div class="publication-title">
-        <a href="https://pubmed.ncbi.nlm.nih.gov/38146838/" target="_blank" rel="noopener noreferrer">
-          An integrated Bayesian framework for multi-omics prediction and variable selection
+        <a href="https://link.springer.com/article/10.1007/s44199-025-00154-7" target="_blank" rel="noopener noreferrer">
+          Mathematical foundations of beta diversity: Why common metrics fail in microbiome analysis
         </a>
       </div>
       <div class="publication-authors">
-        Himel Mallick, Satabdi Saha, Piyali Basak, Vladimir Svetnik, Erina Paul
+        Zihan Zhu, Yiqian Zhang, Wenhao Li, Michael Greenacre, <span class="selected-name">Satabdi Saha</span>, et al.
       </div>
       <div class="publication-venue">
-        2024
+        Journal of Statistical Theory and Applications, 2026
       </div>
     </div>
 
     <div class="publication">
       <div class="publication-title">
         <a href="https://academic.oup.com/bioinformatics/article/38/11/3011/6572335" target="_blank" rel="noopener noreferrer">
-          scSGL: kernelized signed graph learning for single-cell gene regulatory network inference
+          scSGL: Kernelized signed graph learning for single-cell gene regulatory network inference
         </a>
       </div>
       <div class="publication-authors">
-        Abdullah Karaaslanli, Satabdi Saha, Selin Aviyente, Tapabrata Maiti
+        Abdullah Karaaslanli<sup>*</sup> and <span class="selected-name">Satabdi Saha</span><sup>*</sup>, et al.
       </div>
       <div class="publication-venue">
         Bioinformatics, 2022
+      </div>
+      <div class="joint-note">
+        <sup>*</sup>Joint first authors
       </div>
     </div>
 
@@ -174,24 +216,30 @@
         </a>
       </div>
       <div class="publication-authors">
-        Abdullah Karaaslanli, Satabdi Saha, Tapabrata Maiti, Selin Aviyente
+        Abdullah Karaaslanli<sup>*</sup> and <span class="selected-name">Satabdi Saha</span><sup>*</sup>, et al.
       </div>
       <div class="publication-venue">
         BMC Bioinformatics, 2023
+      </div>
+      <div class="joint-note">
+        <sup>*</sup>Equal contribution
       </div>
     </div>
 
     <div class="publication">
       <div class="publication-title">
         <a href="https://academic.oup.com/nar/article-abstract/50/8/e48/6513570" target="_blank" rel="noopener noreferrer">
-          Benchmarking of a Bayesian single cell RNAseq differential gene expression test for dose-response study designs
+          Benchmarking of a Bayesian single-cell RNA-seq differential gene expression test for dose-response study designs
         </a>
       </div>
       <div class="publication-authors">
-        Rance Nault, Satabdi Saha, Sudin Bhattacharya, Jack Dodson, Tapabrata Maiti, Tim Zacharewski
+        Rance Nault<sup>*</sup> and <span class="selected-name">Satabdi Saha</span><sup>*</sup>, et al.
       </div>
       <div class="publication-venue">
         Nucleic Acids Research, 2022
+      </div>
+      <div class="joint-note">
+        <sup>*</sup>Joint first authors
       </div>
     </div>
 
@@ -207,10 +255,83 @@
         </a>
       </div>
       <div class="publication-authors">
-        Satabdi Saha, Lubna Rehman, Abdur Rehman, Faezeh Darbaniyan, Donna M. Weber, Melody Becnel, Mahmoud Gaballa, Sheeba K. Thomas, Hans C. Lee, Chia-Chi Chang, Reetakshi Arora, Meghan Menges, Salvatore Corallo, Marco L. Davila, Frederick L. Locke, Mark R. Tanner, Sattva S. Neelapu, Elizabeth J. Shpall, Christopher R. Flowers, Robert Z. Orlowski, Robert R. Jenq, Michael D. Jain, Christine Peterson, Doris K. Hansen, Neeraj Y. Saini, Krina K. Patel
+        <span class="selected-name">Satabdi Saha</span><sup>*</sup> and Lubna Rehman<sup>*</sup>, et al.
       </div>
       <div class="publication-venue">
         Blood Advances, 2025
+      </div>
+      <div class="joint-note">
+        <sup>*</sup>Equal contribution
+      </div>
+    </div>
+
+    <div class="publication">
+      <div class="publication-title">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41515159/" target="_blank" rel="noopener noreferrer">
+          Investigating chronic toxicity, diet, patient-reported outcomes, and the microbiome in immunotherapy-treated metastatic melanoma survivors
+        </a>
+      </div>
+      <div class="publication-authors">
+        Margaux Robert, <span class="selected-name">Satabdi Saha</span>, et al.
+      </div>
+      <div class="publication-venue">
+        Nutrients, 2026
+      </div>
+    </div>
+
+    <div class="publication">
+      <div class="publication-title">
+        <a href="https://ashpublications.org/blood/article/142/21/1784/497479/Sustained-remissions-in-CLL-after-frontline-FCR" target="_blank" rel="noopener noreferrer">
+          Sustained remissions in CLL after frontline FCR treatment with very-long-term follow-up
+        </a>
+      </div>
+      <div class="publication-authors">
+        Philip A. Thompson, Alexandre Bazinet, William G. Wierda, Constantine S. Tam, Susan M. O'Brien, <span class="selected-name">Satabdi Saha</span>, et al.
+      </div>
+      <div class="publication-venue">
+        Blood, 2023
+      </div>
+    </div>
+
+    <div class="publication">
+      <div class="publication-title">
+        <a href="https://academic.oup.com/toxsci/article-abstract/191/1/135/6759386" target="_blank" rel="noopener noreferrer">
+          Single-cell transcriptomics shows dose-dependent disruption of hepatic zonation by TCDD in mice
+        </a>
+      </div>
+      <div class="publication-authors">
+        Rance Nault, <span class="selected-name">Satabdi Saha</span>, et al.
+      </div>
+      <div class="publication-venue">
+        Toxicological Sciences, 2023
+      </div>
+    </div>
+
+    <div class="publication">
+      <div class="publication-title">
+        <a href="https://journals.asm.org/doi/10.1128/spectrum.01969-21" target="_blank" rel="noopener noreferrer">
+          Distinct potentially adaptive accumulation of truncation mutations in Salmonella enterica serovar Typhi and Salmonella enterica serovar Paratyphi A
+        </a>
+      </div>
+      <div class="publication-authors">
+        Stephy Mol Robinson, Vyshakh Rajachandran, Suchismita Majumdar, <span class="selected-name">Satabdi Saha</span>, et al.
+      </div>
+      <div class="publication-venue">
+        Microbiology Spectrum, 2022
+      </div>
+    </div>
+
+    <div class="publication">
+      <div class="publication-title">
+        <a href="https://www.nature.com/articles/s41598-024-53316-5" target="_blank" rel="noopener noreferrer">
+          Identification of potential inhibitor against Leishmania donovani mitochondrial DNA primase through in-silico and in vitro drug repurposing approaches
+        </a>
+      </div>
+      <div class="publication-authors">
+        Mitul Nath, Deep Bhowmik, <span class="selected-name">Satabdi Saha</span>, et al.
+      </div>
+      <div class="publication-venue">
+        Scientific Reports, 2024
       </div>
     </div>
 
